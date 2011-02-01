@@ -1,0 +1,2 @@
+include/inc_global.php
+include/inc_ldap_settings.php
