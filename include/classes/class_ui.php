@@ -160,7 +160,7 @@ class UI {
 		<div id="app_bar">
 			<table cellpadding="0" cellspacing="0" width="100%">
 			<tr>
-				<td width="175"><div id="title_logo"><a href=""><img src="<?php echo APP__WWW; ?>/images/tool/appbar_webpa_logo.png" alt="<?php echo APP__NAME; ?>" /></a></div></td>
+				<td width="175"><div id="title_logo"><div id="inst_logo"><img src="<?php echo APP__INST_LOGO; ?>" alt="<?php echo APP__INST_LOGO_ALT; ?>" /></div></div></td>
 				<?php
 					if ($this->_user) {
 						echo("<td>{$this->_user->forename} {$this->_user->surname}</td>");
@@ -168,7 +168,7 @@ class UI {
 						echo('<td>&nbsp;</td>');
 					}
 				?>
-				<td align="right"><div id="inst_logo"><img src="<?php echo APP__INST_LOGO; ?>" alt="<?php echo APP__INST_LOGO_ALT; ?>" /></div></td>
+				<td align="right"></td>
 			</tr>
 			</table>
 		</div>
@@ -283,7 +283,7 @@ class UI {
 	function footer() {
 	?>
 	<div id="footer">
-		<div style="margin-top: 50px; float: right;">
+		<div style="margin-top: 100px; float: right;">
 			<!--<a href="http://webpa.ac.uk/" title="WebPA Project" target="_blank"><img src="<?php echo APP__WWW; ?>/images/partners.gif" alt="WebPA Project partner logos" /></a>-->
 			<br />&copy; Loughborough University, 2005 -  <?php echo date('Y');?>
 		</div>
@@ -322,7 +322,7 @@ class UI {
 <?php
 if ($render_menu) {
 	$this->menu();
-	?>
+/*	?>
 		<div class="alert_box" style="margin: 40px 8px 8px 8px; font-size: 0.7em;">
 			<p><strong>Technical Problem?</strong></p>
 			<p>If you have a problem, find a bug or discover a technical problem in the system, <a href="<?php echo APP__WWW ?>/contact/index.php?q=bug">contact us</a> to report it!</p>
@@ -334,7 +334,7 @@ if ($render_menu) {
 			<p><strong>Technical Problem?</strong></p>
 			<p>If you have a problem, find a bug or discover a technical problem in the system, please <a href="mailto:<?php echo(APP__EMAIL_HELP); ?>" title="(email: <?php echo(APP__EMAIL__HELP); ?>)">email us</a> to report it!</p>
 		</div>
-	<?php
+	<?php*/
 }
 ?>
 </div>

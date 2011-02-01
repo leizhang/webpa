@@ -88,7 +88,7 @@ Page Components
 	min-width: 120px;
 	width: auto;
 
-	margin: 50px 0px 0px 176px;	/* margin-top set incorrectly for IE */
+	margin: 60px 0px 0px 176px;	/* margin-top set incorrectly for IE */
 	padding: 0px;
 	
 	background-color: #f6f6f6;
@@ -141,13 +141,13 @@ a.page_bar_link:active { background-color: transparent; }
 
 
 #app_bar {
-	height: <?php echo APP__INST_HEIGHT;?>;
-	background-color: #399;
+	height: 110px;
+	background-color: #fff;
 	
 	border-top: 1px solid #600;
 	border-bottom: 1px solid #600;
 
-	color: #cee;
+	color: #000;
 	
 	font-weight: bold;
 	
@@ -165,13 +165,14 @@ a.page_bar_link:active { background-color: transparent; }
 #app_bar #inst_logo{
 	width: <?php echo APP__INST_WIDTH;?>;
 	padding-right: 10px;
+	padding-top:5px;
 }
 
 
 #breadcrumb_bar {
-	height: 14px;
+	height: 25px;
 	padding: 2px 2px 2px 6px;
-	background-color: #399;
+	background-color: #000;
 	border-bottom: 1px solid #600;
 	color: #fff;
 	font-size: 0.85em;
@@ -186,7 +187,7 @@ a.breadcrumb:active { color: #ddf; }
 #side_bar {
 	position: absolute;
 	left: 0px;
-	top: 50px;
+	top: 86px;
 
 	min-height: 400px;
 	width: 185px;		/* Set width INCORRECTLY for IE5 fix later... */
