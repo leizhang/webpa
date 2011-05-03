@@ -90,7 +90,6 @@ class Authenticator {
 		
 		//bind with the username and password
 		$bind = ldap_bind($ldapconn, $user, $this->password);	
-		//$bind = ldap_bind($ldapconn, "cn=reader,dc=canterbury,dc=ac,dc=nz", "boxer");
 		
 		//check the bind has worked
 		if(!$bind) {
@@ -116,23 +115,29 @@ class Authenticator {
 		}
 		
 		$info = ldap_get_entries($ldapconn,$result);
+		if($info['count']==0) {
+                ldap_close($ldapconn);
+                return false;
+                exit;
+        }
 		
 		// debug : var_dump($info);
 		
 		//with the results add this to the cls info.
-		$this->fullname = $info[0]["displayname"][0];
-		$this->email = $info[0]["mail"][0];
-		$description_str = $info[0]["description"][0];
-		
-		//check in the string for staff
-		if(strripos ($description_str, 'staff')){
-			$this->user_type = 'staff';
-		}else{
-			$this->user_type = 'student';
-		}	
-		
-		$this->_authenticated = true;
-	
+        $this->fullname = $info[0]["cn"][0];
+        $this->email = $info[0]["mail"][0];
+        $description_str = $info[0]["uctypecode"][0];
+
+        //check in the string for staff
+        if(strripos ($description_str, 'STAF')){
+                $this->user_type = 'staff';
+        }else{
+                $this->user_type = 'student';
+        }
+
+        $this->_authenticated = true;
+
+
 		ldap_close($ldapconn);
 		
 		return $this->_authenticated;
